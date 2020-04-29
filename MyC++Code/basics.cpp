@@ -162,7 +162,7 @@ int main()
     //------------------------------------------------------------
     //classes 
     //------------------------------------------------------------
-        //All members of a class are private by default.Private means that a member is only accessible from within its containerand children.
+        //All members of a class are private by default. Private means that a member is only accessible from within its containerand children.
         class D {
             int E; //'E' is aprivate member since private is default for members.
         public: //All following declarations are public.

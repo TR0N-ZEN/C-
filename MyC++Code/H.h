@@ -1,8 +1,9 @@
 #pragma once
 
 class H {
-	int I;					//Members only declared. Members by default privat
+	//int I;					//Members only declared. Members by default privat
 public:
+	int I;
 	H(int L);				//Declaration of the constructor.
 	~H();					//Declaration of the destructor.
 	void print();			//Members only declared.
@@ -12,4 +13,9 @@ public:
 							//It resides to the class itself, and all instances use this one function 'S'.
 							//These functions are only permitted to use static variables
 							//These functions are called like so: 'H::S()'
+	//------------------------------------------------------------
+	//orperator overloading in classes
+	//------------------------------------------------------------
+		//Syntax: 'DATATYPE operatorORPERATORSIGN(DATATYPE& other)'
+		
 };

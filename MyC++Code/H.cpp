@@ -1,5 +1,6 @@
 #include "H.h"			// "" or double quotes are used, whenn library is located in the source folder. <> or bihher than and smaller than signs are used when the library is located in system folders.
 #include <iostream>
+//using namespace H;
 
 //------------------------------------------------------------
 //constructors in classes
@@ -56,3 +57,12 @@
 		//These functions are only permitted to use static variables.
 		//These functions are called like so: 'H::S()'.
 	};
+
+//------------------------------------------------------------
+//orperator overloading in classes
+//------------------------------------------------------------
+	//Syntax: 'DATATYPE operator ORPERATORSIGN(DATATYPE& other){...}' 
+	H operator +(H& other) {
+		H T(4);
+		T.I = I + other.I;
+	}
