@@ -18,7 +18,7 @@
 //------------------------------------------------------------
 //functions
 //------------------------------------------------------------
-    void function(int l, int m = 0) { //'int l = 0' means that if there is no second parameter passed, 'm' will be set to 0, which is called its default value. The variable 'l' has no default value.
+    void function(int l, int m = 0) { //'int m = 0' means that if there is no second parameter passed, 'm' will be set to 0, which is called its default value. The variable 'l' has no default value.
 	    std::cout << "I am a function and got passed the parameters: l = " << l << ", m = " << m << std::endl;
     }
 
@@ -146,7 +146,7 @@ int main()
     //------------------------------------------------------------
     //arrays in C++ style
     //------------------------------------------------------------
-        std::array<int, 3> w = { 1, 2, 3 }; //equivalent class to the stack arry in C style, though the std::array has some functions like the following 'size()' function. 
+        std::array<int, 3> w = { 1, 2, 3 }; //equivalent class to the stack arry in C style, though the std::array has some methods like the following 'size()' function. 
         w.size();
         std::vector<int> A{1, 2, 3};
         A.push_back(4); //to append an item
