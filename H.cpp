@@ -1,4 +1,4 @@
-#include "H.h"			// "" or double quotes are used, whenn library is located in the source folder. <> or bihher than and smaller than signs are used when the library is located in system folders.
+#include "H.h"			// "" or double quotes are used, whenn library is located in the source folder. <> or bigger than and smaller than signs are used when the library is located in system folders.
 #include <iostream>
 //using namespace H;
 

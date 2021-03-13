@@ -1,6 +1,7 @@
 #include <iostream>//  <> or bigger than and smaller than signs are used when the library is located in system folders.
 #include <array>
 #include <vector>
+#include <cmath>
 #include "H.h"
 
 //------------------------------------------------------------
@@ -31,7 +32,7 @@
         float z;
 
         float CalculateAbsolutevalue() {
-            return sqrt(x * x + y * y + z * z);
+            return sqrt(x * x + y * y + z * z); //imported via '#include <cmath>'
         }
     };
 
@@ -122,13 +123,12 @@ int main()
     //------------------------------------------------------------
         int* n = new int; //'n' is a pointer to a memory adress whichs memory holds an integer. Because of the initalisation with 'new' 'n' points to a memory location in the heap memory 
         *n = 42;
-        //delete n; //for maaking space in heap
+        //delete n; //for making space in heap
 
     //------------------------------------------------------------
     //references
     //------------------------------------------------------------
         int*& o = n; //'o' is now an alias for 'n'. Syntax: 'DATATYPE& VARIABLENAME = VARIABLENAME'
-    
     //------------------------------------------------------------
     //arrays in C style
     //------------------------------------------------------------
@@ -146,7 +146,7 @@ int main()
     //------------------------------------------------------------
     //arrays in C++ style
     //------------------------------------------------------------
-        std::array<int, 3> w = { 1, 2, 3 }; //equivalent class to the stack arry in C style, though the std::array has some methods like the following 'size()' function. 
+        std::array<int, 3> w = { 1, 2, 3 }; //equivalent class to the stack array in C style, though the std::array has some methods like the following 'size()' function. 
         w.size();
         std::vector<int> A{1, 2, 3};
         A.push_back(4); //to append an item
@@ -174,7 +174,7 @@ int main()
         //In a header file 'HEADERFILENAME.h' the class is defined. All its members are only declared.
         //The definiton and the implementation is then stored in a source file usally named like 'FILENAME.cpp'
         H J(0); //Class allocation in stack. Syntax 'CLASSNAME VARIABLENAME'
-        H* K = new H(1); //Class allocation in heap. Syntax 'CLASSSNAME* VARIABLENAME = new CLASSNAME'
+        H* K = new H(1); //Class allocation in heap. Syntax 'CLASSNAME* VARIABLENAME = new CLASSNAME'
         J.print();
         (*K).print(); // '(*K).print() <=> K->print()'
         delete K;
