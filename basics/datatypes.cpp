@@ -5,9 +5,14 @@
 #include <array>
 #include <vector>
 
+// GLOBAL variables
+int x; // declaration
+int y = 3; // declaration and initilisation
+
 int main()
 {
-	//storing stuff in the stack memory
+	// LOCAL variables
+	// storing stuff in the STACK MEMORY
 	int i = -1;
 	unsigned int u = 1;
 	float f = 0.5;
@@ -15,17 +20,17 @@ int main()
 	bool b = true;
 	char c = 'c';
 	std::string s = "character chain";
-	std::cout << "Hello World!\n"; //printing strings to the object 'std' stream 'out' std::out
-	int* p = &i; //p is a pointer to a memory address which holds an integer value
-	//storing stuff in the heap
-	int* n = new int; //'n' is a pointer to a memory adress whichs memory holds an integer. Because of the initalisation with 'new'/the constructor that returns a memory address of the reserved spot in the heap 'n' points to a memory location in the heap memory 
+	std::cout << "Hello World!\n"; // printing strings to the object 'std' stream 'out' std::out
+	int* p = &i; // p is a pointer to a memory address which holds an integer value
+	// storing stuff in the HEAP MEMORY
+	int* n = new int; //'n' is a POINTER to a memory adress whichs memory holds an integer. Because of the initalisation with 'new'/the constructor that returns a memory address of the reserved spot in the heap 'n' points to a memory location in the heap memory 
 	*n = 42;
-	int*& o = n; //'o' is now an alias/reference for 'n'. Syntax: 'DATATYPE& VARIABLENAME = VARIABLENAME'
+	int*& o = n; //'o' is now an ALIAS/REFERENCE for 'n'. Syntax: 'DATATYPE& VARIABLENAME = VARIABLENAME'
 	delete n; // for making space in the heap
 	
-	//arrays in C style
-	int array_in_stack[3] = {1, 2, 3}; //Array saved in stack memory. Syntax: 'DATATYPE ARRAYNAME[AMOUNTOFITEMS] = {ITEM, .... ITEM}'
-	int* pointer_to_array_in_heap = new int[3] {1, 2, 3}; //Array is stored in heap memory
+	// arrays in C style
+	int array_in_stack[3] = {1, 2, 3}; // Array saved in stack memory. Syntax: 'DATATYPE ARRAYNAME[AMOUNTOFITEMS] = {ITEM, .... ITEM}'
+	int* pointer_to_array_in_heap = new int[3] {1, 2, 3}; // Array is stored in heap memory
 	int* pointer_to_array_in_stack = array_in_stack;
 
 	for (int i = 0; i <= 10; i++)
@@ -48,23 +53,28 @@ int main()
 		std::cout << entry << std::endl;
 	}
 	
-	//static variables
-	//Preserves a variable beyond its scope lifetime to the lifetime of the entire program.
+	// STORAGE CLASSES
+	// auto
+	//
+	// static
+	// Preserves a variable beyond its scope lifetime to the lifetime of the entire program.
+	// On members of a class it makes the member one and the same for all objects made from this class or one inheriting it.
 	for (int P = 0; P < 10; P++) {
 		static int Q = 0;
 		std::cout << Q << std::endl;
 		Q = Q + 1;
 	}
+	//
+	// register
+	// variable will be stored in register if possible (decided by compiler, platform and other stuff I don't know of how they decide, so the variabel may be saved in register)
+	// used for variables which have to be accessed really fast; can't use & operator on it.
 }
+	// extern
+	// used to expose functions and variables to other files/program parts
+	int f4() { return 4; }
+	int super_global = 5;
+	// in other files: "extern int f4(); extern int super_global;"
+	//
+	// mutable
+	// only in objetcs ... ???
 
-//for using VS Community
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

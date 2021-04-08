@@ -6,7 +6,8 @@
 //constructors in classes
 //------------------------------------------------------------
 	//Syntax: 'CLASSNAME::CLASSNAME(...) {...}'
-	H::H(int L) { 
+	H::H(int L)
+	{
 		//Implementation of the constructor.
 		I = L;
 	}
@@ -15,7 +16,8 @@
 //destructors in classes
 //------------------------------------------------------------
 	//Syntax: 'CLASSNAME::~CLASSNAME() {...}'
-	H::~H() { 
+	H::~H()
+	{
 		//Implementaition of the destructor.
 		std::cout << "Destructor has been called. He destroyed I = " << I << std::endl;
 	}
@@ -24,15 +26,14 @@
 //functions in classes
 //------------------------------------------------------------
 	//Syntax: 'DATATYPE CLASSNAME::FUNCTIONNAME(...) {...}'
-	void H::print() {
-		std::cout << "I = " << I << std::endl;
-	}
+	void H::print() { std::cout << "I = " << I << std::endl; }
 
 //------------------------------------------------------------
 //constant functions in classes
 //------------------------------------------------------------
 	//Syntax: 'DATATYPE CLASSNAME::FUNCTIONNAME(...) const {...}'
-	void H::Something() const {
+	void H::Something() const
+	{
 		//this function doesn't change any of the members of its class, since the keyword 'const'
 	}
 
@@ -51,7 +52,8 @@
 //static functions in classes
 //------------------------------------------------------------
 	//Syntax: 'DATATYPE CLASSNAME::FUNCTIONNAME(...){...}'
-	void H::S() {
+	void H::S()
+	{
 		//This function is //'S' is independent to the individual instaces of this class 'H'.
 		//It resides to the class itself, and all instances use this one function 'S'.
 		//These functions are only permitted to use static variables.
@@ -62,7 +64,8 @@
 //orperator overloading in classes
 //------------------------------------------------------------
 	//Syntax: 'DATATYPE operator ORPERATORSIGN(DATATYPE& other){...}' 
-	H operator +(H& other) {
-		H T(4);
-		T.I = I + other.I;
+	H operator+(H& a, H& b) // orperator+ function is static
+	{
+		H c(4);
+		c.I = a.I + b.I;
 	}

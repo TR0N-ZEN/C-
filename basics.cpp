@@ -155,20 +155,19 @@ int main()
         B[0] = 1;
         B[1] = 2;
         B[2] = 3;
-        for (int C : B) {
-            std::cout << C << std::endl;
-        }
+        for (int C : B) { std::cout << C << std::endl; }
 
     //------------------------------------------------------------
     //classes 
     //------------------------------------------------------------
         //All members of a class are private by default. Private means that a member is only accessible from within its containerand children.
-        class D {
-            int E; //'E' is aprivate member since private is default for members.
-        public: //All following declarations are public.
-            int F; //'F' is public.
-        private: //All following declarations are private.
-            int G;//'G' is private.
+        class D
+				{
+        		int E; //'E' is aprivate member since private is default for members.
+        	public: //All following declarations are public.
+        		int F; //'F' is public.
+        	private: //All following declarations are private.
+        		int G;//'G' is private.
         };
         //class definitions and initalisations are usally stored in external files.
         //In a header file 'HEADERFILENAME.h' the class is defined. All its members are only declared.

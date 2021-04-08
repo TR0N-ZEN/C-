@@ -29,5 +29,5 @@ class1 operator+(const class1& e1) {
 
 class1 operator*(const class1& e1, const class1 e2) {
 	class1 x(1);
-	x.member1 = e1.member1 * e2.member1;
+	x.member2 = e1.member2 * e2.member2;
 }
