@@ -61,11 +61,12 @@
 	};
 
 //------------------------------------------------------------
-//orperator overloading in classes
+//operator overloading in classes
 //------------------------------------------------------------
-	//Syntax: 'DATATYPE operator ORPERATORSIGN(DATATYPE& other){...}' 
+	// syntax: 'DATATYPE operatorOPERATORSIGN(DATATYPE& x, ...){...}' 
 	H operator+(H& a, H& b) // orperator+ function is static
 	{
 		H c(4);
 		c.I = a.I + b.I;
 	}
+	// operator fucntions are seemingly alway static

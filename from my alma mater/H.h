@@ -1,4 +1,4 @@
-#pragma once
+#pragma once // 
 
 class H {
 	//int I;					//Members only declared. Members by default privat

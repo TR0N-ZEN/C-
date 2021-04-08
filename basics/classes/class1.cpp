@@ -22,9 +22,9 @@ void class1::method3() {
 }
 
 //outside definition of a function
-class1 operator+(const class1& e1) {
+class1 operator+(const class1& e0, const class1& e1) {
 	class1 x(1);
-	x.member2 = member2 + e1.member2;
+	x.member2 = e0.member2 + e1.member2;
 }
 
 class1 operator*(const class1& e1, const class1 e2) {
