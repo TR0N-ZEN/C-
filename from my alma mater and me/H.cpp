@@ -64,9 +64,15 @@
 //operator overloading in classes
 //------------------------------------------------------------
 	// syntax: 'DATATYPE operatorOPERATORSIGN(DATATYPE& x, ...){...}' 
+	// overlading a non member function
 	H operator+(H& a, H& b) // orperator+ function is static
 	{
 		H c(4);
 		c.I = a.I + b.I;
 	}
-	// operator fucntions are seemingly alway static
+// overlaoding a member function 
+	H H::operator+(H& a) // orperator+ function is static
+	{
+		H c(4);
+		c.I = a.I + this->I;
+	}

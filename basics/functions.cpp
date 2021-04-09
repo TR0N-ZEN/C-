@@ -32,3 +32,7 @@ int function1(int l, int m = 0)
 	std::cout << "I am a function and got passed the parameters: l = " << l << ", m = " << m << std::endl;
 	return m;
 }
+
+// inline functions
+inline int f14(int a) { return a * 2; }
+// inline functions get there body inserted everywehere this function is called in the source code, their call is replaced by the function body at time of compilation (I think id speeds up execution but increases memory usage)

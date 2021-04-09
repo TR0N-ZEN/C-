@@ -13,6 +13,7 @@ class H {
 								//It resides to the class itself, and all instances use this one function 'S'.
 								//These functions are only permitted to use static variables
 								//These functions are called like so: 'H::S()'
+		H operator+(H& h);
 		//------------------------------------------------------------
 		// orperator overloading in classes
 		//------------------------------------------------------------
