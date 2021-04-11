@@ -10,7 +10,7 @@ class a
 	private:
 		int member4;
 		a(int a, int b, int c) { member1 = a; member2 = c; member3 = b + c; member4 = c + a; };
-	~a() { std::cout << "Object of class 'a' got deleted"; };
+		~a() { std::cout << "Object of class 'a' got deleted"; };
 };
 
 // private members of a base class (here 'a') are not accessible by the derived classes 

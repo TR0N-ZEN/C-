@@ -1,7 +1,7 @@
 #include <iostream> // needed for 'std::cout' ...
 
 // all members of a class are private by default
-// Private means that a member is only accessible from within its containerand children.
+// private means that a member is only accessible from within its container, and e.g. not from instances of child classes
 
 class abstract_thing
 {
@@ -36,8 +36,8 @@ class abstract_thing
 };
 // definition of a function - which is already taken as a friend for a class meaning it can access all members of the class which considers it a friend
 int f10(abstract_thing a) { return a.member1 + a.member3; }
-//class definitions are usally stored in external files called headerfiles 'HEADERFILENAME.h', all members of the class are usally only declared in it.
-//the definition and the implementation is then stored in a source file usally named like 'FILENAME.cpp'
+// class declarations are usally stored in external files called headerfiles 'HEADERFILENAME.h', all members of the class are usally only declared in it.
+// the definition and the implementation is then stored in a source file usally named like 'FILENAME.cpp'
 
 // definition of the constructor (both versions are equivalent in thei function)
 abstract_thing::abstract_thing(int val1) { member1 = val1; }
