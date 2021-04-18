@@ -12,8 +12,8 @@ int main()
 	float scalar_product;
 	string usr;
 	
-	do
-	{
+	// do
+	// {
 		cout << endl << "Enter values vor vector one? [y|n]: ";
 		cin >> usr;
 		if (usr == "y")
@@ -28,32 +28,37 @@ int main()
 			Vector::set(v2);
 			Vector::log(v2);
 		}
-		cout << "Orperation? [+|*|X|length]: ";
-		char orperation;
-		cin >> orperation;
-		switch(orperation)
-		{
-			case '+':
-				v3 = v1+v2;
-				Vector::log(v3);
-				break;
-			case '*':
-				scalar_product = v1*v2;
-				cout << "scalar product = " << scalar_product << endl;
-				break;
-			case 'X':
-				v3 = Vector::X(v1, v2);
-				Vector::log(v3);
-				break;
-			default:
-				cout << "Nothing is done" << endl;
-		}
-		cout << "Wanna do another calculation? [y|n]: ";
+		cout << endl << "Enter values vor vector three? [y|n]: ";
 		cin >> usr;
-	}
-	while (usr == "y");
-	v3 = Vector::X(v1,v2);
-	float parallelogram_area = Vector::length(v3);
-	float triangle_area = parallelogram_area * 0.5;
-	cout << "Triangle area of last two given vectors: " << triangle_area << endl;
+		if (usr == "y")
+		{
+			Vector::set(v3);
+			Vector::log(v3);
+		}
+	// cout << "Orperation? [+|*|X|length]: ";
+	// char orperation;
+	// cin >> orperation;
+	// 	switch(orperation)
+	// 	{
+	// 		case '+':
+	// 			v3 = v1+v2;
+	// 			Vector::log(v3);
+	// 			break;
+	// 		case '*':
+	// 			scalar_product = v1*v2;
+	// 			cout << "scalar product = " << scalar_product << endl;
+	// 			break;
+	// 		case 'X':
+	// 			v3 = Vector::X(v1, v2);
+	// 			Vector::log(v3);
+	// 			break;
+	// 		default:
+	// 			cout << "Nothing is done" << endl;
+	// 	}
+	// 	cout << "Wanna do another calculation? [y|n]: ";
+	// 	cin >> usr;
+	// }
+	// while (usr == "y");
+	cout << "AreaOfTriangle: " << AreaOfTriangle(v1, v2, v3) << endl;
+	cout << "AreaOfTriangle2: " << AreaOfTriangle2(v1, v2, v3) << endl;
 };
