@@ -4,8 +4,8 @@ class Vector
 {
 	public:
 		float x, y, z;
-		Vector();
-		Vector(float a, float b, float c);
+		// Vector();
+		Vector(float a = 0, float b = 0, float c = 0);
 		~Vector();
 		static float length(Vector& v1);
 		Vector operator+(Vector& v2);

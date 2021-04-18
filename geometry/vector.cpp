@@ -10,12 +10,12 @@ Vector::Vector(float a, float b,float c)
 	y = b;
 	z = c;
 }
-Vector::Vector()
-{
-	x = 0;
-	y = 0;
-	z = 0;
-}
+// Vector::Vector()
+// {
+// 	x = 0;
+// 	y = 0;
+// 	z = 0;
+// }
 Vector::~Vector()
 {
 	cout << "Vector deleted" << endl;
