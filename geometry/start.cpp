@@ -3,53 +3,57 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 	bool go_on = true;
 	Vector v1 = Vector();
 	Vector v2 = Vector();
 	Vector v3 = Vector();
 	float scalar_product;
 	string usr;
+	
 	do
 	{
-		cout << "Enter values vor vector one? [y|n]";
+		cout << endl << "Enter values vor vector one? [y|n]: ";
 		cin >> usr;
-		if (usr == "n") {  }
-		else if (usr == "y")
+		if (usr == "y")
 		{
-			cout << "x = ";
-			cin >> v1.x;
-			cout << endl << "y = ";
-			cin >> v1.y;
-			cout << endl << "z = ";
-			cin >> v1.z;
+			Vector::set(v1);
+			Vector::log(v1);
 		}
-		cout << endl << "Enter values vor vector two? [y|n]";
+		cout << endl << "Enter values vor vector two? [y|n]: ";
 		cin >> usr;
-		if (usr == "n") {  }
-		else if (usr == "y")
+		if (usr == "y")
 		{
-			cout << endl << "x = ";
-			cin >> v2.x;
-			cout << endl << "y = ";
-			cin >> v2.y;
-			cout << endl << "z = ";
-			cin >> v2.z;
+			Vector::set(v2);
+			Vector::log(v2);
 		}
-		cout << endl << "Operation? [+|*|X|length]: " << endl;
-		int operation_index;
-		cin >> usr;
-		switch(operation_index)
+		cout << "Orperation? [+|*|X|length]: ";
+		char orperation;
+		cin >> orperation;
+		switch(orperation)
 		{
-			case 0:
+			case '+':
 				v3 = v1+v2;
-				cout << "x = " << v3.x << endl << "y = " << v3.y << endl << "z = " << v3.z;
+				Vector::log(v3);
 				break;
-			case 1:
+			case '*':
 				scalar_product = v1*v2;
-				cout << "scalar product = " << scalar_product;
+				cout << "scalar product = " << scalar_product << endl;
 				break;
+			case 'X':
+				v3 = Vector::X(v1, v2);
+				Vector::log(v3);
+				break;
+			default:
+				cout << "Nothing is done" << endl;
 		}
+		cout << "Wanna do another calculation? [y|n]: ";
+		cin >> usr;
 	}
-	while (go_on);
-}
+	while (usr == "y");
+	v3 = Vector::X(v1,v2);
+	float parallelogram_area = Vector::length(v3);
+	float triangle_area = parallelogram_area * 0.5;
+	cout << "Triangle area of last two given vectors: " << triangle_area << endl;
+};
