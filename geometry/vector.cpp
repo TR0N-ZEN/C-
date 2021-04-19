@@ -19,7 +19,7 @@ Vector::Vector(float a, float b,float c)
 
 Vector::~Vector()
 {
-	cout << "Vector deleted" << endl;
+	// cout << "Vector deleted" << endl;
 }
 
 float Vector::length(Vector& v1)
@@ -79,8 +79,8 @@ float AreaOfTriangle(Vector& OV1, Vector& OV2, Vector& OV3)
 	Vector a = (OV1*(-1)) + OV2;
 	Vector b = (OV2*(-1))+ OV3;
 	Vector c = (OV1*(-1)) + OV3;
-	float dag = a*c/(Vector::length(a))*(Vector::length(c));
-	return (sin(acos(DagToRad(dag))) / 2) * ((a*c+b*c) / (Vector::length(c)));
+	float x = a*c/(Vector::length(a))*(Vector::length(c));
+	return ( (sin(acos(x))) / 2 ) * ( ((a*c)+(b*c)) / (Vector::length(c)) );
 }
 
 float AreaOfTriangle2(Vector& OV1, Vector& OV2, Vector& OV3)
