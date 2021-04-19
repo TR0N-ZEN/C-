@@ -10,6 +10,7 @@ class Vector
 		static float length(Vector& v1);
 		Vector operator+(Vector& v2);
 		Vector operator*(float scalar);
+		static float angle_between(Vector& a, Vector& b);
 		float operator*(Vector& v2);
 		static Vector X(Vector& v1, Vector& v2);
 		static void log(Vector& v1);

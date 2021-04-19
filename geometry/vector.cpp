@@ -45,6 +45,11 @@ Vector Vector::operator*(float scalar)
 	return v3;
 }
 
+float angle_between(Vector& a, Vector& b)
+{
+	return RadToDag( acos( (a*b) / ( Vector::length(a) * Vector::length(b) ) ) );
+};
+
 float Vector::operator*(Vector &v2)
 {
 	return this->x * v2.x + this->y * v2.y + this->z * v2.z;
