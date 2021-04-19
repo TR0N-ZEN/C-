@@ -80,7 +80,7 @@ float AreaOfTriangle(Vector& OV1, Vector& OV2, Vector& OV3)
 	Vector b = (OV2*(-1))+ OV3;
 	Vector c = (OV1*(-1)) + OV3;
 	float x = a*c/(Vector::length(a))*(Vector::length(c));
-	return ( (sin(acos(x))) / 2 ) * ( ((a*c)+(b*c)) / (Vector::length(c)) );
+	return ( ( (sin( acos(x) )) * Vector::length(a) ) / 2 )  * ( ((a*c)+(b*c)) / (Vector::length(c)) );
 }
 
 float AreaOfTriangle2(Vector& OV1, Vector& OV2, Vector& OV3)
