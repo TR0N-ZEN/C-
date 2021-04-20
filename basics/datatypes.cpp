@@ -30,8 +30,8 @@ int main()
 	
 	// arrays in C style
 	int array_in_stack[3] = {1, 2, 3}; // Array saved in stack memory. Syntax: 'DATATYPE ARRAYNAME[AMOUNTOFITEMS] = {ITEM, .... ITEM}'
-	int* pointer_to_array_in_heap = new int[3] {1, 2, 3}; // Array is stored in heap memory
 	int* pointer_to_array_in_stack = array_in_stack;
+	int* pointer_to_array_in_heap = new int[3] {1, 2, 3}; // Array is stored in heap memory
 
 	for (int i = 0; i <= 10; i++)
 	{
