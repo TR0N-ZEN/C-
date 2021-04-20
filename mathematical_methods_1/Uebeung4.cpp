@@ -61,9 +61,10 @@ class Figure
 		static string* horizontal_axis_reflection(string figure[], int vertexes)
 		{// {4,3,2,1} -> {3,4,1,2}
 			string *p;
-			p = counter_clockwise_rotation(figure, vertexes);
+			p = counter_clockwise_rotation(figure, vertexes); // amount of times rotation has to be done depends on vertexes
 			p = vertical_axis_reflection(p, vertexes);
-			return clockwise_rotation(p, vertexes);
+			p = clockwise_rotation(p, vertexes); // amount of times rotation has to be done depends on the amount of times the antirotation has been done so ultimately on vertexes
+			return p;
 		}
 };
 
