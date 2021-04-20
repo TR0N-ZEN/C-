@@ -56,40 +56,45 @@ class Figure
 				*(p+index) = figure[lastindex-j];
 				j++;
 			}
-			for (int i = 0; i < vertexes; i++)
-			{
-				cout << *(p+i) << endl;
-			}
 			return p;
 		}
+		static string* horizontal_axis_reflection(string figure[], int vertexes)
+		{// {4,3,2,1} -> {3,4,1,2}
+			string *p;
+			p = counter_clockwise_rotation(figure, vertexes);
+			return vertical_axis_reflection(p, vertexes);
+		}
 };
+
+int print_permutation(string permutation[], int vertexes, string check)
+{
+	for (int i = 0; i < vertexes; i++) { cout << permutation[i] << " "; }
+	cout << endl << check << endl << endl;
+	return 0;
+}
 
 int main()
 {
 	int vertexes = 4;
-	string square[] = {"4","3","2","1"}; // clockwise naming of vertexes
+	string square[vertexes] = {"4","3","2","1"}; // clockwise naming of vertexes
 	string* p;
+	string check;
 	cout << endl;
-	for (int i = 0; i < vertexes; i++)
-	{
-		cout << square[i] << endl;
-	}
-	cout << endl;
+	print_permutation(square, vertexes, " ");
+	
+	// {4,3,2,1} -> {1,4,3,2}
 	p = Figure::clockwise_rotation(square, vertexes);
-	for (int i = 0; i < vertexes; i++)
-	{
-		cout << *(p+i) << endl;
-	}
-	cout << endl;
+	print_permutation(p, vertexes, "1 4 3 2");
+	
+	// {1,4,3,2} -> {4,3,2,1}
 	p = Figure::counter_clockwise_rotation(p, vertexes);
-	for (int i = 0; i < vertexes; i++)
-	{
-		cout << *(p+i) << endl;
-	}
-	cout << endl;
+	print_permutation(p, vertexes, "4 3 2 1");
+	
+	// {4,3,2,1} -> {1,2,3,4}
 	p = Figure::vertical_axis_reflection(square, vertexes);
-	for (int i = 0; i < vertexes; i++)
-	{
-		cout << *(p+i) << endl;
-	}
+	print_permutation(p, vertexes, "1 2 3 4");
+	
+	// {4,3,2,1} -> {3,4,1,2}
+	p = Figure::horizontal_axis_reflection(square, vertexes);
+	print_permutation(p, vertexes, 	"3 4 1 2");
 }
