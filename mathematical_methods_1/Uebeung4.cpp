@@ -62,7 +62,8 @@ class Figure
 		{// {4,3,2,1} -> {3,4,1,2}
 			string *p;
 			p = counter_clockwise_rotation(figure, vertexes);
-			return vertical_axis_reflection(p, vertexes);
+			p = vertical_axis_reflection(p, vertexes);
+			return clockwise_rotation(p, vertexes);
 		}
 };
 
