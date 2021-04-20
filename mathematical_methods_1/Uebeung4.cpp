@@ -3,25 +3,6 @@
 
 using namespace std;
 
-int* clockwise_rotation(int figure[], int vertexes)
-{// {4,3,2,1} -> {1,4,3,2}
-	int* p = new int[vertexes];
-	for (int i = 0; i < vertexes; i++)
-	{
-		*(p+(i+1)%vertexes) = figure[i];
-	}
-	return p;
-}
-int* counter_clockwise_rotation(int figure[], int vertexes)
-{// {1,4,3,2} -> {4,3,2,1}
-	int* p = new int[vertexes];
-	for (int i = 0; i < vertexes; i++)
-	{
-		*(p+i) = figure[(i+1)%vertexes]; // [0] <- [1], [1] <- [2], [2] <- [3], ... , [vertexes] <- [0] 
-	}
-	return p;
-}
-
 class Figure
 {
 	private:
@@ -46,27 +27,67 @@ class Figure
 				*(p+i) = *(this->vertexes + i);
 			}
 			return p;
-		};
+		}
+		static string* clockwise_rotation(string figure[], int vertexes)
+		{// {4,3,2,1} -> {1,4,3,2}
+			string* p = new string[vertexes];
+			for (int i = 0; i < vertexes; i++)
+			{
+				*(p+(i+1)%vertexes) = figure[i];
+			}
+			return p;
+		}
+		static string* counter_clockwise_rotation(string figure[], int vertexes)
+		{// {1,4,3,2} -> {4,3,2,1}
+			string* p = new string[vertexes];
+			for (int i = 0; i < vertexes; i++)
+			{
+				*(p+i) = figure[(i+1)%vertexes]; // [0] <- [1], [1] <- [2], [2] <- [3], ... , [vertexes] <- [0] 
+			}
+			return p;
+		}
+		static string* vertical_axis_reflection(string figure[], int vertexes)
+		{// {4,3,2,1} -> {1,2,3,4}
+			string* p = new string[vertexes];
+			int lastindex = vertexes-1;
+			int j = 0;
+			for(int index = (vertexes%2); index < vertexes; index++)
+			{
+				*(p+index) = figure[lastindex-j];
+				j++;
+			}
+			for (int i = 0; i < vertexes; i++)
+			{
+				cout << *(p+i) << endl;
+			}
+			return p;
+		}
 };
 
 int main()
 {
 	int vertexes = 4;
-	int square[] = {4,3,2,1}; // clockwise naming of vertexes
-	int* p;
+	string square[] = {"4","3","2","1"}; // clockwise naming of vertexes
+	string* p;
 	cout << endl;
 	for (int i = 0; i < vertexes; i++)
 	{
 		cout << square[i] << endl;
 	}
 	cout << endl;
-	p = clockwise_rotation(square, vertexes);
+	p = Figure::clockwise_rotation(square, vertexes);
 	for (int i = 0; i < vertexes; i++)
 	{
 		cout << *(p+i) << endl;
 	}
 	cout << endl;
-	p = counter_clockwise_rotation(p, vertexes);
+	p = Figure::counter_clockwise_rotation(p, vertexes);
+	for (int i = 0; i < vertexes; i++)
+	{
+		cout << *(p+i) << endl;
+	}
+	cout << endl;
+	p = Figure::vertical_axis_reflection(square, vertexes);
 	for (int i = 0; i < vertexes; i++)
 	{
 		cout << *(p+i) << endl;
