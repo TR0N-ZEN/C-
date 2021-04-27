@@ -148,6 +148,7 @@ int main()
     //------------------------------------------------------------
         std::array<int, 3> w = { 1, 2, 3 }; //equivalent class to the stack array in C style, though the std::array has some methods like the following 'size()' function. 
         w.size();
+				
         std::vector<int> A{1, 2, 3};
         A.push_back(4); //to append an item
         A.size();
