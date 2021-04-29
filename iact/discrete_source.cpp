@@ -33,3 +33,4 @@ float discrete_source::entropy()
 	}
 	return sum;
 };
+
