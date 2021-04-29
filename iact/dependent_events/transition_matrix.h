@@ -1,13 +1,15 @@
 #include <vector>
 using namespace std;
 
-class transition_matrix
+class transition_probabilities
 {
-	vector<vector<int>> transition_probabilities;
-	transition_matrix();
-	void set(int i, int j, int value);
-	vector<int> get_row(int i);
-	void set_row(int i, vector<int> row);
-	vector<int> get_coloumn(int j);
-	void set_column(int j, vector<int> coloumn);
+	public: 
+		vector<vector<float>> matrix;
+		transition_probabilities();
+		void set(int i, int j, float value);
+		float get(int i, int j);
+		vector<float> get_row(int i);
+		void set_row(int i, vector<float> row);
+		vector<float> get_coloumn(int j);
+		void set_column(int j, vector<float> coloumn);
 };

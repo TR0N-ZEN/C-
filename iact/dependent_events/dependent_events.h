@@ -7,9 +7,9 @@ using namespace std;
 class dependent_events
 {
 	private:
-		vector<vector<vector<int>>> probabilities_matrixes; //[t][row][coloumn]
+		vector<vector<float>> probability_vectors; //dependent on clock / point in time [t]
 	public:
 		dependent_events();
-		transition_matrix transition_probabilities;
-		static void update();
+		transition_probabilities transition_probabilities;
+		void update();
 };
