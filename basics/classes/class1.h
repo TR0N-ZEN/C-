@@ -14,6 +14,6 @@ class class1 {
 								// It resides to the class itself, and all instances use this one function 'method3'.
 								// These functions are only permitted to use static variables
 								// These functions are called like so: 'class1::method3()'
-		int operator+(const class1& e1);
+		int operator+(const class1& e1); // thsi function will be an inside defined function, that can access the this operator/variable
 		friend int operator*(const class1& e1, const class1& e2);
 };
