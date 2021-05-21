@@ -7,5 +7,6 @@ in the console/terminal type
 	link the resulting an .exe file in case of using windows
 
 use "g++ -c module_1.cpp ... module_n.cpp" to compile the moudule_x.cpp files to .o files
-and "g++ -o main.o module_1.o ... module_n.cpp" to link the .o files to one .o file
-or "g++ -o main.exe module_1.o ... module_n.cpp" to link the .o files to one .exe file
+and
+		"g++ -o main.o module_1.o ... module_n.cpp" to link the .o files to one .o file
+or 	"g++ -o main.exe module_1.o ... module_n.cpp" to link the .o files to one .exe file
