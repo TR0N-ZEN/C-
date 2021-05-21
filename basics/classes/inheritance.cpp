@@ -21,13 +21,15 @@ class b : public a
 	public:
 		int sum() { return this->member3 + this->member2; }
 };
+
 // protected inheritance: public, protected -> protected
 class c : protected a
 {
 	int product() { return this-> member2 * this->member3; }
 };
+
 // private inheritance: public, protected -> private
-class e : protected a
+class e : private a
 {
 	int power() { return std::pow(this-> member2, this->member3); }
 };
