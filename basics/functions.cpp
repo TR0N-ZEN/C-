@@ -17,9 +17,9 @@ extern int f4();
 // FORMAL PARAMETERS are the values passed to a function
 void f5(int* a, int*& b, int c)
 {
-	*a += 1; // a will be altered outside the scope of this function since it was PASSED BY POINTER
-	b += 1; // for b it's the same as for a, since it was PASSED BY REFERENCE
-	c += c ; // c won't be altered outside the scope of this function since it was PASSED BY VALUE
+  *a += 1; // a will be altered outside the scope of this function since it was PASSED BY POINTER
+  b += 1; // for b it's the same as for a, since it was PASSED BY REFERENCE
+  c += 1 ; // c won't be altered outside the scope of this function since it was PASSED BY VALUE
 }
 // function overloading
 // <=> declaring a function with a name already in use for a function but with different parameters in amount or type or both
@@ -28,9 +28,9 @@ std::string function2(std::string f_parameter1) { return f_parameter1; }
 
 int function1(int l, int m = 0)
 {
-	//'int m = 0' means that if there is no second parameter passed, 'm' will be set to 0, which is called its default value. The variable 'l' has no default value.
-	std::cout << "I am a function and got passed the parameters: l = " << l << ", m = " << m << std::endl;
-	return m;
+  //'int m = 0' means that if there is no second parameter passed, 'm' will be set to 0, which is called its default value. The variable 'l' has no default value.
+  std::cout << "I am a function and got passed the parameters: l = " << l << ", m = " << m << std::endl;
+  return m;
 }
 
 // inline functions
