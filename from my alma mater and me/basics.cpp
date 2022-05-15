@@ -20,7 +20,7 @@
 //functions
 //------------------------------------------------------------
     void function(int l, int m = 0) { //'int m = 0' means that if there is no second parameter passed, 'm' will be set to 0, which is called its default value. The variable 'l' has no default value.
-	    std::cout << "I am a function and got passed the parameters: l = " << l << ", m = " << m << std::endl;
+      std::cout << "I am a function and got passed the parameters: l = " << l << ", m = " << m << std::endl;
     }
 
 //------------------------------------------------------------
@@ -105,8 +105,8 @@ int main()
     //------------------------------------------------------------
     //functions
     //------------------------------------------------------------
-	    function(1);
-	    std::cout << "Bye";
+      function(1);
+      std::cout << "Bye";
 
     //------------------------------------------------------------
     //structs aka almost classes
@@ -148,7 +148,7 @@ int main()
     //------------------------------------------------------------
         std::array<int, 3> w = { 1, 2, 3 }; //equivalent class to the stack array in C style, though the std::array has some methods like the following 'size()' function. 
         w.size();
-				
+        
         std::vector<int> A{1, 2, 3};
         A.push_back(4); //to append an item
         A.size();
@@ -163,12 +163,12 @@ int main()
     //------------------------------------------------------------
         //All members of a class are private by default. Private means that a member is only accessible from within its containerand children.
         class D
-				{
-        		int E; //'E' is aprivate member since private is default for members.
-        	public: //All following declarations are public.
-        		int F; //'F' is public.
-        	private: //All following declarations are private.
-        		int G;//'G' is private.
+        {
+            int E; //'E' is aprivate member since private is default for members.
+          public: //All following declarations are public.
+            int F; //'F' is public.
+          private: //All following declarations are private.
+            int G;//'G' is private.
         };
         //class definitions and initalisations are usally stored in external files.
         //In a header file 'HEADERFILENAME.h' the class is defined. All its members are only declared.
